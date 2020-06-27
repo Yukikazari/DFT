@@ -4,8 +4,6 @@ import numpy as np
 from pylab import *
 
 def createSineWave (A, f0, fs, length):
-    """振幅A、基本周波数f0、サンプリング周波数 fs、
-    長さlength秒の正弦波を作成して返す"""
     data = []
     for n in arange(length * fs): 
         s = A * np.sin(2 * np.pi * f0 * n / fs)
@@ -28,7 +26,10 @@ def createwav(data, f0, fs):
 
 
 if __name__ == "__main__" :
+    # 欲しい正弦波の周波数 複数入力可能
     freqList = [250]
+    # サンプリング周波数
+    fs = 8000
     for f in freqList:
-        data = createSineWave(0.25, f, 8000, 1.0)
-        createwav(data, f,  8000)
+        data = createSineWave(0.25, f, fs, 1.0)
+        createwav(data, f, fs)
