@@ -3,6 +3,12 @@ import struct
 import numpy as np
 from pylab import *
 
+# 欲しい正弦波の周波数 複数入力可能
+freqList = [250]
+# サンプリング周波数
+fs = 8000
+
+
 def createSineWave (A, f0, fs, length):
     data = []
     for n in arange(length * fs): 
@@ -26,10 +32,6 @@ def createwav(data, f0, fs):
 
 
 if __name__ == "__main__" :
-    # 欲しい正弦波の周波数 複数入力可能
-    freqList = [250]
-    # サンプリング周波数
-    fs = 8000
     for f in freqList:
         data = createSineWave(0.25, f, fs, 1.0)
         createwav(data, f, fs)
