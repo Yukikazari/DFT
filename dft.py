@@ -7,7 +7,7 @@ import os
 wfile = ""
 
 # 開始
-start = 4000
+start = 0
 
 # サンプル数
 N = 256
@@ -23,14 +23,14 @@ class dft_obj:
 # 講義にあった方
 def dft_lect(start, f, N):
   Y = []
-  for n in range(N):
+  for k in range(N):
     obj = dft_obj()
     ar = 0.0
     ai = 0.0
-    for m in range(N):
-      x = ((2 * np.pi) / N) * m * n
-      ar += f[start + m] * np.cos(-x)
-      ai += f[start + m] * np.sin(-x)
+    for n in range(N):
+      x = ((2 * np.pi) / N) * n * k
+      ar += f[start + n] * np.cos(-x)
+      ai += f[start + n] * np.sin(-x)
       
     ar /= N
     ai /= N
@@ -43,6 +43,7 @@ def dft_lect(start, f, N):
     Y.append(obj)
 
   return Y
+
 
 def plt_lect(Y):
   print("次数\t実数部\t虚数部\t絶対値")
@@ -84,9 +85,6 @@ if __name__ == "__main__":
 
     
     wf.close()
-
-  #  X = dft_site(start, f, N)
-  #  plt_site(X)
 
     Y = dft_lect(start, f, N)
     plt_lect(Y)
