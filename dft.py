@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 
 # waveファイル名
-wfile = r"E:\ぷろぐらむ\cit\2020\数値計算\create250.wav"
+wfile = ""
 
 # 開始
 start = 4000
