@@ -28,7 +28,7 @@ def createwav(data, f0, fs):
 
 
 if __name__ == "__main__" :
-    freqList = [3, 5, 250]
+    freqList = [250]
     for f in freqList:
         data = createSineWave(0.25, f, 8000, 1.0)
         createwav(data, f,  8000)
