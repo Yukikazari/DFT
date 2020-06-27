@@ -10,7 +10,7 @@ wfile = ""
 start = 4000
 
 # サンプル数
-N = 800
+N = 256
 
 # 表示する周波数上限
 dis = 2000
@@ -46,7 +46,7 @@ def dft_lect(start, f, N):
 
 def plt_lect(Y):
   print("次数\t実数部\t虚数部\t絶対値")
-  i = 1
+  i = 0
   freqList = [k * fs / N for k in range(N)]
   amplitudeSpectrum = [c.x for c in Y]
   phaseSpectrum = [np.arctan2(int(c.ai), int(c.ar)) for c in Y]
